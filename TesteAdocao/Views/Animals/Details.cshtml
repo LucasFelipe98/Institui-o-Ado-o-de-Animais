@@ -1,0 +1,34 @@
+﻿@model TesteAdocao.Models.Animal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <label>Nome: </label>
+        @Html.DisplayFor(model => model.AnimalNome)
+    </div>
+    <div class="panel-body">
+        <label>Imagem: </label>
+        <img src="~/ImgAnimais/@Html.DisplayFor(model => model.AnimalImagem)" style="width: 150px; margin-left: 150px" />
+    </div>
+    <div class="panel-body">
+        <label>Descrição</label>
+        @Html.DisplayFor(model => model.AnimalDescricao)
+    </div>
+    <div class="panel-body">
+        <label>Cor</label>
+        @Html.DisplayFor(model => model.AnimalCor)
+    </div>
+    <div class="panel-body">
+        <label>Preço: </label>
+        @Html.DisplayFor(model => model.AnimalRaca)
+    </div>
+
+</div>
+@Html.ActionLink("Editar", "Edit", new { id = Model.AnimalId }, new { @class = "btn btn-success" })
+@Html.ActionLink("Voltar a Lista", "Index", null, new { @class = "btn btn-primary" })
+

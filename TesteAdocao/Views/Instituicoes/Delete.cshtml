@@ -1,0 +1,66 @@
+﻿@model TesteAdocao.Models.Instituicao
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Você tem certeza que deseja deletar este usuario?</h3>
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        Instituicao
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoLogin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoLogin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoSenha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoTelefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoTelefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoEndereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoEndereco)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("voltar", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

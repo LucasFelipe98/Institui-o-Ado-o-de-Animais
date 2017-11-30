@@ -1,0 +1,28 @@
+﻿@model TesteAdocao.Models.Instituicao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detailhes</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @Html.DisplayFor(model => model.InstituicaoLogin)
+    </div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.InstituicaoNome)
+    </div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.InstituicaoEndereco)
+    </div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.InstituicaoTelefone)
+    </div>
+
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.InstituicaoId }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary" })
+</p>
+

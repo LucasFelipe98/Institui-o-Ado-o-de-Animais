@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TesteAdocao.Models.Animal>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de animais</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo Animal", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered table-striped" style="width: 80%; margin-left: 10%">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalImagem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalDescricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalCor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalRaca)
+        </th>
+        <td width="250"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="/ImgAnimais/@item.AnimalImagem" style="width: 150px; height: 150px" ) />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalCor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalRaca)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.AnimalId }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Detalhes", "Details", new { id = item.AnimalId }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Deletar", "Delete", new { id = item.AnimalId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+

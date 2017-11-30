@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TesteAdocao.Models.Instituicao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituicaoLogin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituicaoNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituicaoTelefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituicaoEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituicaoEndereco)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstituicaoLogin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstituicaoNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstituicaoTelefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstituicaoEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstituicaoEndereco)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.InstituicaoId }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Detalhes", "Details", new { id = item.InstituicaoId }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Deletar", "Delete", new { id = item.InstituicaoId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

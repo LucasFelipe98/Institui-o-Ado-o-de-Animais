@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TesteAdocao.Models.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista De Categorias</h2>
+
+<p>
+    @Html.ActionLink("Criar nova categoria", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoriaNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoriaDescricao)
+        </th>
+        <td width="250"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaDescricao)
+            </td>
+            <td>
+                @Html.ActionLink("Conferir animais", "AnimalPorCategoria", "Animal", new { id = item.CategoriaId }, new { @class = "btn btn-success btn-block" })
+                @Html.ActionLink("Editar", "Edit", new { id = item.CategoriaId }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Detalhes", "Details", new { id = item.CategoriaId }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Deletar", "Delete", new { id = item.CategoriaId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

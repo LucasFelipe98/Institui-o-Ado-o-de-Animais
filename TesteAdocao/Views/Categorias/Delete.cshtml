@@ -1,0 +1,41 @@
+﻿@model TesteAdocao.Models.Categoria
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Tem Certeza que deseja deletar essa categoria?</h3>
+<div>
+    <h4>Categoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaDescricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaDescricao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Voltar a Lista", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

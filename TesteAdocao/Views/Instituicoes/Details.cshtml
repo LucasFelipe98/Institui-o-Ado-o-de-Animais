@@ -1,0 +1,58 @@
+﻿@model TesteAdocao.Models.Instituicao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Instituicao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoLogin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoLogin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoTelefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoTelefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituicaoEndereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituicaoEndereco)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InstituicaoId }) |
+    @Html.ActionLink("voltar", "Index")
+</p>

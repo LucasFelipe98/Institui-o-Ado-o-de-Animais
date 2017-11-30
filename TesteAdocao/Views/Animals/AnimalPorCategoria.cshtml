@@ -1,0 +1,66 @@
+﻿@model IEnumerable<TesteAdocao.Models.Animal>
+@using TesteAdocao.Models;
+@{
+    ViewBag.Title = "AnimalPorCategoria";
+
+}
+    <h2>Animais Por Categoria</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo Animal", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalImagem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria.CategoriaNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalDescricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalCor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalRaca)
+        </th>
+        <td width="190"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="/ImgAnimais/@item.AnimalImagem" style="width: 150px; height: 150px" ) />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.CategoriaNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalCor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalRaca)
+            </td>
+            <rd>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.AnimalId }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.AnimalId }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.AnimalId }, new { @class = "btn btn-danger" })
+                </td>
+            </rd>
+        </tr>
+    }
+
+</table>
